@@ -6,7 +6,7 @@
  * @return {object}
  */
 function convertToObject(sourceString) {
-  return sourceString
+  const cssStyles = sourceString
     .split(';')
     .map((line) => line.trim())
     .filter(Boolean)
@@ -17,6 +17,8 @@ function convertToObject(sourceString) {
 
       return prev;
     }, {});
+
+  return cssStyles;
 }
 
 module.exports = convertToObject;
